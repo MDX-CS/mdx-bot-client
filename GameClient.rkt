@@ -15,14 +15,14 @@
 )
 
 #|
- | The server address
+ | The server address.
  |
  | @var string
  |#
-(define HTTP_ADDRESS "10.14.121.75")
+(define ADDRESS "10.14.121.75")
 
 #|
- | Returns coordinates of the goal
+ | Returns coordinates of the goal.
  |
  | @return list '(x y)
  |#
@@ -36,7 +36,7 @@
 )
 
 #|
- | Returns coordinates of the bot
+ | Returns coordinates of the bot.
  |
  | @return list '(x y)
  |#
@@ -51,7 +51,7 @@
 
 #|
  | Return a list of boleans where false means NO OBSTACLE, and true means
- | that an OBSTACLE IS PRESENT
+ | that an OBSTACLE IS PRESENT.
  |
  | @return list '(east west south north)
  |#
@@ -67,9 +67,9 @@
 )
 
 #|
- | Sends an http request to move the bot and returns its new coordinates
+ | Sends an http request to move the bot and returns its new coordinates.
  |
- | @param string direction
+ | @param  string direction
  | @return list '(x y)
  |#
 (define (move direction)
@@ -87,7 +87,7 @@
 )
 
 #|
- | Creates a new game
+ | Creates a new game.
  |
  | @return void
  |#
@@ -96,9 +96,9 @@
 )
 
 #|
- | Sets the username after the game has been completed
+ | Sets the username after the game has been completed.
  |
- | @param string username
+ | @param  string username
  | @return void
  |#
 (define (setName username)
@@ -106,7 +106,7 @@
 )
 
 #|
- | Gets the elapsed time for the current session
+ | Gets the elapsed time for the current session.
  |
  | @return float
  |#
@@ -117,17 +117,17 @@
 )
 
 #|
- | Helper function to send a http request
+ | Helper function to send an http request.
  |
- | @param string uri
- | @param callable response
+ | @param  string uri
+ | @param  callable response
  | @return mixed
  |#
 (define (bot-request uri [callback #f])
   (define-values (status headers in)
-    (http-sendrecv HTTP_ADDRESS (uri-encode uri))
+    (http-sendrecv ADDRESS (uri-encode uri))
   )
   (define response (string->jsexpr (port->string in)))
   (close-input-port in)
-  (if callback (callback response) #t)
+  (if callback (callback response) response)
 )

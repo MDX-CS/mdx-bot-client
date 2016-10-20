@@ -70,6 +70,12 @@ The `getElapsedTime` function returns the elapsed time in current session.
 
 The `setName` function associates your username with the result. Note that this function will reset the position of the MdxBot when called before reaching the goal.
 
+```racket
+(setName "Your name")
+```
+
+---
+
 ## Example
 
 ```racket
@@ -80,6 +86,7 @@ The `setName` function associates your username with the result. Note that this 
 (newGame)
 (define goal (getGoal))
 
-(move "x+");
+(move "x+")
+(move "y+")
 ```
 
