@@ -10,10 +10,26 @@ List of functions provided by the client.
 
 The `getGoal` function returns a list of coordinates of the current goal.
 
+```racket
+(getGoal)
+
+; '(7 8)
+```
+
+---
+
 ### `getCurPos`
 
 The `getCurPos` function returns a list of coordinates of the mdx bot.
   
+```racket
+(getGoal)
+
+; '(1 2)
+```
+
+---
+
 ### `move`
 
 The `move` function moves the bot in given direction and returns its new position. Accepted directions are as follows:
@@ -21,15 +37,35 @@ The `move` function moves the bot in given direction and returns its new positio
 - `x-` moves the bot towards west
 - `y+` moves the bot towards south
 - `y-` moves the bot towards north
+  
+```racket
+(getCurPos)
+(move "x+)
+
+; '(1 2)
+; '(2 2)
+```
+
+---
 
 ### `newGame`
 
 The `newGame` function resets the game and generates a new map.
 
+---
+
 ### `getElapsedTime`
 
 The `getElapsedTime` function returns the elapsed time in current session.
  
+```racket
+(getElapsedTime)
+
+; 3.34
+```
+
+---
+
 ### `setName`
 
 The `setName` function associates your username with the result. Note that this function will reset the position of the MdxBot when called before reaching the goal.
