@@ -40,7 +40,7 @@ The `move` function moves the bot in given direction and returns its new positio
   
 ```racket
 (getCurPos)
-(move "x+)
+(move "x+")
 
 ; '(1 2)
 ; '(2 2)
