@@ -1,10 +1,10 @@
 # MdxBot racket client
 
-To use this library simply download the `GameClient.rkt` file and import it into your script via `(require "GameClient.rkt")`. Note that for the client to work, you have to be connected to the MDX VPN.
+To use this library simply download the `GameClient.rkt` file and import it into your script via:
+`(require "GameClient.rkt")`
+Note that for the client to work, you have to be connected to the MDX VPN.
 
 ## Functions
-
-List of functions provided by the client.
 
 ### `getGoal`
 
@@ -78,7 +78,7 @@ The `setName` function associates your username with the result. Note that this 
 (require "GameClient.rkt")
 
 (newGame)
-(define goal (getGoal)
+(define goal (getGoal))
 
 (move "x+");
 ```
