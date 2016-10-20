@@ -23,7 +23,7 @@ The `getGoal` function returns a list of coordinates of the current goal.
 The `getCurPos` function returns a list of coordinates of the mdx bot.
   
 ```racket
-(getGoal)
+(getCurPos)
 
 ; '(1 2)
 ```
