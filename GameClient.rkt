@@ -131,5 +131,3 @@
   (close-input-port in)
   (if callback (callback response) response)
 )
-
-(scan)
