@@ -56,7 +56,7 @@
  | @return list '(east west south north)
  |#
 (define (scan)
-  (bot-request "/mdxBot/scan/" (lambda (response)
+  (bot-request "/mdxBot/scan" (lambda (response)
     (list
       (hash-ref response 'east)
       (hash-ref response 'west)
@@ -131,3 +131,5 @@
   (close-input-port in)
   (if callback (callback response) response)
 )
+
+(scan)
